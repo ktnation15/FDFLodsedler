@@ -1,0 +1,26 @@
+﻿@page
+@model FDFLodsedler.Pages.Roles.UserRoleModel
+@{
+}
+<form method="post">
+    <div class="card">
+        <div class="card-header">
+            <h2> Opret eller slet en bruger fra denne rolle</h2>
+        </div>
+        <div class="card-body">
+            @for (int i = 0; i < Model.UsersInRole.Count; i++)
+            {
+                <div class="form-check m-1">
+                    <input type="hidden" asp-for="UsersInRole[i].UserId" />
+                    <input type="hidden" asp-for="UsersInRole[i].UserName" />
+                    <input type="checkbox" asp-for="UsersInRole[i].IsSelected" class="form-check-input" />
+                    <label class="form-check-label">@Model.UsersInRole[i].UserName</label>
+                </div>
+            }
+        </div>
+        <div class="card-footer">
+            <input type="submit" value="Update" class="btn btn-primary" style="width:auto" />
+            <a asp-page="/Roles/EditRole" asp-route-sid="@Model.UsersInRole.FirstOrDefault()?.UserId" class="btn btn-primary" style="width:auto">Annuller</a>
+        </div>
+    </div>
+</form>

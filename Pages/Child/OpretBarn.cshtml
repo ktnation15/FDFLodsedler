@@ -1,0 +1,35 @@
+﻿@page
+@model FDFLodsedler.Pages.Child.OpretBarnModel
+@{
+}
+<h1>Tilføj Børn</h1>
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="  ModelOnly  " class="text-danger">
+            </div>
+        <div class="form-group">
+                <label asp-for="@Model.børn.Navn" class="control-label"></label>
+                <input asp-for="@Model.børn.Navn" class="form-control" />
+                <span asp-validation-for="@Model.børn.Navn" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.børn.GruppeId" class="control-label">Gruppe Navn</label>
+                 <select class=" form-control" asp-for="@Model.børn.GruppeId">
+                  @* @if (Model.BørneGruppes != null)
+                    {*@
+                    @foreach (var item in Model.BørneGruppes)
+                    {
+                            <option value="@item.Gruppe_Id">@item.Navn</option>
+                    }
+
+                    @* } *@
+                </select>
+                <span asp-validation-for="@Model.børn.GruppeId" class="text-danger"></span>
+            </div>
+       <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+     </div>
+        </form>
+   </div>
+</div>

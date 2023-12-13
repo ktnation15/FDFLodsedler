@@ -1,0 +1,43 @@
+﻿@page
+@model FDFLodsedler.Pages.Account.RegisterUserModel
+@{
+}
+<div class=" container mt-5">
+    <div class=" col-sm-12  col-lg-4">
+
+        <h1 class=" mb-3">Opret ny bruger</h1>
+
+        <form method ="post">
+
+            <div asp-validation-summary="All" class="text-danger">
+
+            </div>
+            <div class="mb-3">
+                <label class=" form-label"  asp-for="@Model.Register.Email">Skriv email adresse</label>
+                <input type="text" asp-for="@Model.Register.Email" class="form-control"/>
+                <span asp-validation-for=" @Model.Register.Email" class="text-danger"></span>
+
+            </div>
+            <div class="mb-3">
+                <label class=" form-label" asp-for="@Model.Register.Password">Indtast Password</label>
+                <input type="text" asp-for="@Model.Register.Password" class="form-control" />
+                <span asp-validation-for="@Model.Register.Password" class="text-danger"></span>
+
+            </div>
+            <div class="mb-3">
+                <label class=" form-label" asp-for="@Model.Register.ConfrimPassword">Gentag Password</label>
+                <input type="text" asp-for="@Model.Register.ConfrimPassword" class="form-control" />
+                <span asp-validation-for="@Model.Register.ConfrimPassword" class="text-danger"></span>
+
+            </div>
+
+            <div class=" mb-3">
+                <button type="submit" class="btn btn-primary">Opret</button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>

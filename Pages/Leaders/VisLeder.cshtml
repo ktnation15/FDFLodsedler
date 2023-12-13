@@ -1,0 +1,22 @@
+﻿@page
+@model FDFLodsedler.Pages.Leaders.VisLederModel
+@{
+}
+<p>
+    <a asp-page="/Leaders/OpretLeder"> Nyt Medlem</a>
+</p>
+<h1> Liste Af Ledre</h1>
+<div class="card-deck">
+    @foreach (var l in Model.Leders)
+    {
+        <div class="card-header">
+            <h3>@l.Navn </h3>
+            <div>
+            </div>
+            <div class="card-footer text-sm-center">
+                <a asp-page="/Leaders/SletLeder" asp-route-sid="@l.Leder_Id" class="btn btn-danger m-1">Slet</a>
+                <a asp-page="/Bestyrelse/OpdatereMedlem" asp-route-sid="@l.Leder_Id" class="btn btn-primary">Opdater</a>
+            </div>
+        </div>
+    }
+</div>

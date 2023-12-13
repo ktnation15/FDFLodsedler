@@ -1,0 +1,32 @@
+﻿@page
+@model FDFLodsedler.Pages.Board.VisMedlemmerModel
+@{
+}
+<p>
+    <a asp-page="/Board/AddMedlemmer"> Nyt Medlem</a>
+</p>
+<h1> Liste Af Lodsedler</h1>
+
+<table class="table">
+    <thead>
+        <tr>         
+            <th>Navn</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.bestyrelses != null)
+        {
+            @foreach (var item in Model.bestyrelses)
+            {
+                <tr>
+                    <td> @item.Navn </td>
+                    <td>
+                        <a asp-page="/Tickets/VisLodseldler" asp-route-sid="@item.Bestyrelse_Id" class="btn btn-danger m-1">Slet</a>
+                    </td>
+                    <td>
+                        <a asp-page="/Tickets/VisLodseldler" asp-route-sid="@item.Bestyrelse_Id" class="btn btn-primary">Opdater</a>
+                    </td>
+                </tr>
+            }
+        }
+</table>

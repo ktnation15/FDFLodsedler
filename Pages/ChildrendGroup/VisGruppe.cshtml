@@ -1,0 +1,22 @@
+﻿@page
+@model FDFLodsedler.Pages.ChildrendGroup.VisGruppeModel
+@{
+}
+<p>
+    <a asp-page="/ChildrendGroup/OpretGruppe">Opret Gruppe</a>
+</p>
+<h1> Liste Af Gruppe</h1>
+<div class="card-deck">
+    @foreach (var l in Model.børneGruppes)
+    {
+            <div class="card-header">
+                <h3>@l.Navn </h3>
+                <div>
+                </div>
+                <div class="card-footer text-sm-center">
+                    <a asp-page="/ChildrendGroup/SletGruppe" asp-route-sid="@l.Gruppe_Id" class="btn btn-danger m-1">Slet</a>
+                    <a asp-page="/Bestyrelse/OpdatereMedlem" asp-route-sid="@l.Gruppe_Id" class="btn btn-primary">Opdater</a>
+                </div>
+            </div>
+    }
+</div>

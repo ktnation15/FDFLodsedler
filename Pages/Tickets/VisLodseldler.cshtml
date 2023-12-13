@@ -1,0 +1,60 @@
+﻿@page
+@model FDFLodsedler.Pages.Tickets.VisLodseldlerModel
+@{
+}
+<p>
+    <a asp-page="/Leaders/OpretLeder"> Nyt Medlem</a>
+</p>
+<h1> Liste Af Lodselder</h1>
+<table class="table">
+    <thead>
+        <tr>
+            @*  <th> BarnId </th>*@
+            <th>Lod_Id </th>
+            <th>Børn_Id </th>
+            <th>AntalUdleveret </th>        
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Lodseldler != null)
+        {
+            @foreach (var item in Model.Lodseldler)
+            {
+                <tr>
+                    @* <td> @item.BarnId </td>*@
+                    <td> @item.Lod_Id </td>
+                     <td> @item.BørneId</td>
+                    <td> @item.AntalUdleveret</td>   
+                    <td>
+                        <a asp-page="/Tickets/VisLodseldler" asp-route-sid="@item.BørneId" class="btn btn-danger m-1">Slet </a>                      
+                    </td>                   
+                    <td>
+                        <a asp-page="/Tickets/VisLodseldler" asp-route-sid="@item.BørneId" class="btn btn-primary">Opdater </a>
+                    </td>
+                </tr>
+            }
+        }
+</table>
+@*<div class="card-deck">
+    @foreach (var l in Model.Lodseldler)
+    {
+        <div class="card-header">
+            <h3>@l.Lod_Id </h3>
+            <h3>@l.AntalUdleveret </h3>
+            <div>
+            </div>
+            <div class="card-footer text-sm-center">
+                <a asp-page="/Tickets/VisLodseldler" asp-route-sid="@l.BørneId" class="btn btn-danger m-1">Delete </a>
+
+                <a asp-page="/Tickets/VisLodseldler" asp-route-sid="@l.BørneId" class="btn btn-primary">Update </a>
+
+            </div>
+
+        </div>
+
+
+
+    }
+
+</div>
+*@

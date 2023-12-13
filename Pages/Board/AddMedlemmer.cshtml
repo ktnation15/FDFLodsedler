@@ -1,0 +1,21 @@
+﻿@page
+@model FDFLodsedler.Pages.Board.AddMedlemmerModel
+@{
+}
+<h1>Tilføj Medlemmer</h1>
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="  ModelOnly  " class="text-danger">
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.bestyrelse.Navn" class="control-label"></label>
+                <input asp-for="@Model.bestyrelse.Navn" class="form-control" />
+                <span asp-validation-for="@Model.bestyrelse.Navn" class="text-danger"></span>
+            </div>
+             <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>

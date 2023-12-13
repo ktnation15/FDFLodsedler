@@ -1,0 +1,27 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> signInManager
+
+
+
+<!-- _LoginPartial.cshtml -->
+@if (signInManager.IsSignedIn(User))
+{
+        <li class="nav-item">
+            <a class="btn btn-primary" asp-area="" asp-page="/Account/Logout">Logout</a>
+        </li>
+}
+else
+{
+        <li class="nav-item">
+            <div class="btn-group">
+                <div>
+                    <a asp-page="/Account/Login" class="btn btn-primary">Login</a>
+                </div>
+                <div>
+                    <a asp-page="/Account/RegisterUser" class="btn btn-primary">Opret</a>
+                </div>
+
+
+            </div>
+        </li>
+}

@@ -1,0 +1,40 @@
+﻿@page
+@model FDFLodsedler.Pages.Sales.VisSalgModel
+@{
+}
+<p>
+    <a asp-page="/Sales/OpretSalg"> Nyt Medlem</a>
+</p>
+<h1> Liste Af salg</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            @*  <th> BarnId </th>*@
+            <th>Salg_Id </th>
+            <th>Børn_Id </th>
+            <th>AntalRetuneret </th>
+            <th>AntalSolgt </th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Salgs != null)
+        {
+            @foreach (var item in Model.Salgs)
+            {
+                <tr>
+                    @* <td> @item.BarnId </td>*@
+                    <td> @item.Salg_Id </td>
+                    <td> @item.BørneId </td>
+                    <td> @item.AntalReturneret</td>
+                    <td> @item.AntalSolgt</td>
+                    <td>
+                        <a asp-page="/Sales/SletSalg" asp-route-sid="@item.BørneId" class="btn btn-danger m-1">Slet </a>
+                    </td>
+                    <td>
+                        <a asp-page="/Sales/OpdatereSalg" asp-route-sid="@item.BørneId" class="btn btn-primary">Opdater </a>
+                    </td>
+                </tr>
+            }
+        }
+</table>

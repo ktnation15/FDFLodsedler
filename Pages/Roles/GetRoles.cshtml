@@ -1,0 +1,41 @@
+﻿@page
+@model FDFLodsedler.Pages.Roles.GetRolesModel
+@{
+}
+<h1>Alle roller</h1>
+
+@if (Model.Roles != null)
+{
+        <a class="btn btn-primary mb-3" style="width:auto" asp-page="/Roles/CreateRole">Opret Role</a>
+    foreach (var role in Model.Roles)
+    {
+                <div class=" card">
+                <div class=" card-header">
+                 Role Name : @role.RoleName
+                </div>
+                <div class="card-body">
+                </div>
+                <div class="card-footer">
+                        <a class="btn btn-primary" asp-page="/Roles/EditRole"  asp-route-Name="@role.RoleName" asp-route-sid="@role.RoleId">Ændre</a>
+                @* <a class="btn btn-primary" asp-page="/Roles/RolesToUser" asp-route-sid="@role.RoleId">Add users</a>*@
+                        <a class="btn btn-primary" asp-page="/Roles/UserRole" asp-route-sid="@role.RoleId">Opret bruger</a>
+                @*  <a  class="btn btn-primary">Delete</a>*@
+                </div>
+            </div>
+    }
+}
+else
+{
+        <div class=" card">
+            <div class=" card-header">
+                Rolle er ikke oprettet
+            </div>
+            <div class="card-body">
+                <h5 class=" card-title">
+                Tryk på knappen for at oprette en ny rolle
+                </h5>
+                <a class=" btn btn-primary" style="width: auto"></a>
+                Opret rolle
+            </div>
+        </div>
+}

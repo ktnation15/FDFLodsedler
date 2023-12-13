@@ -1,0 +1,28 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+<br/> <br />
+<div class="content-flex">
+    <div class="text-center">
+        <h1 class="display-4">Velkommen til FDF Vanløse lodseddelsalgssystem</h1>
+        
+    </div>
+    <div class="image-section">
+        <img src="~/css/fdfspejder.jpg" alt="Descriptive Alt Text">
+    </div>
+</div>
+<div class="text-center">
+    <div class="btn-group">
+        <div>
+            <a asp-page="/Account/Login" class="btn btn-primary">Login</a>
+        </div>
+        <div>
+            <a asp-page="/Account/RegisterUser" class="btn btn-primary">Opret</a>
+        </div>        
+    </div>
+    <div>
+        <p>Hvis du har problemer med at login, så <a href="https://da.wikipedia.org/wiki/HTTP_404">Klik her</a>.</p>
+    </div>
+</div>
