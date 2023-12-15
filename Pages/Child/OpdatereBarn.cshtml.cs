@@ -7,7 +7,9 @@ namespace FDFLodsedler.Pages.Child
 {
     public class OpdatereBarnModel : PageModel
     {
-        private IBørn Børn;     
+        private IBørn Børn;
+
+     
         public OpdatereBarnModel(IBørn børn)
         {
             Børn = børn;
@@ -15,21 +17,25 @@ namespace FDFLodsedler.Pages.Child
 
         [BindProperty]
         public Børn børn { get; set; }
-        
-        public void OnGet(int sid)
-        {
-            børn = Børn.GetAllBørn(sid);
-        }
 
-        public IActionResult OnPost()
-        {
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
-            Børn.Update(børn);
 
-            return RedirectToPage("/Child/VisBarn");
-        }
+    public void OnGet(int sid)
+    {
+        børn = Børn.GetAllBørn(sid);
+
     }
+
+    public IActionResult OnPost()
+    {
+        if (!ModelState.IsValid)
+        {
+            return Page();
+        }
+        Børn B = børn;
+        Børn.Update(børn);
+
+
+        return RedirectToPage("/Child/VisBarn");
+    }
+}
 }

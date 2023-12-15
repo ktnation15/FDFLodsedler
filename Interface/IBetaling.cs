@@ -2,16 +2,17 @@
 
 namespace FDFLodsedler.Interface
 {
-    public class IBetaling
+    public interface IBetaling
     {
-        //IEnumerable<Betaling> GetBetaling();
+        IEnumerable<Betaling> GetBetaling();
 
-        //public Betaling GetAllBetaling(int id);
+        public Betaling GetAllBetaling(int id);
 
-        //public void AddBetaling(Børn børn);
+        public void AddBetaling(Betaling betaling);
 
-        //public void RemoveBetaling(Børn børn);
+        public void RemoveBetaling(Betaling betaling);
 
-        //public void UpdateBetaling(Børn børn);
+        public void UpdateBetaling(Betaling betaling);
+
     }
 }

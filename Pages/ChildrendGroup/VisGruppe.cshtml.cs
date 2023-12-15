@@ -11,16 +11,16 @@ namespace FDFLodsedler.Pages.ChildrendGroup
 
         [BindProperty]
 
-        public  IEnumerable<BørneGruppe>  børneGruppes{ get; set; }
+        public IEnumerable<BørneGruppe> børneGruppes{ get; set; }
 
-        public VisGruppeModel(IBørneGruppe børneGruppe)
-        {
-            this.børneGruppe = børneGruppe;
-        }
-
-        public void OnGet()
-        {
-            børneGruppes=børneGruppe.GetBørn();
-        }
+    public VisGruppeModel(IBørneGruppe børneGruppe)
+    {
+        this.børneGruppe = børneGruppe;
     }
+
+    public void OnGet()
+    {
+        børneGruppes = børneGruppe.GetBørn();
+    }
+}
 }

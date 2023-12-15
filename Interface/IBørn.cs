@@ -12,6 +12,6 @@ namespace FDFLodsedler.Interface
 
         public void RemoveBørn(Børn børn);
 
-        public void Update(Børn børn);
+        public void Update(Børn updatedborn);
     }
 }

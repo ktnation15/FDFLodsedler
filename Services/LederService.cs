@@ -9,7 +9,7 @@ namespace FDFLodsedler.Services
 
         private ApplicationDBContext Context;
 
-        
+
 
         public LederService(ApplicationDBContext context)
         {
@@ -18,8 +18,8 @@ namespace FDFLodsedler.Services
 
         public void AddLeder(Leder leder)
         {
-           Context.Leders.Add(leder);
-           Context.SaveChanges();
+            Context.Leders.Add(leder);
+            Context.SaveChanges();
         }
 
         public Leder GetAlleder(int id)
@@ -30,7 +30,7 @@ namespace FDFLodsedler.Services
 
         public IEnumerable<Leder> GetLeder()
         {
-           return Context.Leders;
+            return Context.Leders;
         }
 
         public void RemoveLeder(Leder leder)
@@ -39,9 +39,23 @@ namespace FDFLodsedler.Services
             Context.SaveChanges();
         }
 
-        public void UpdateLeder(Leder leder)
+        public void UpdateLeder(Leder Updatedleder)
         {
-            throw new NotImplementedException();
+            Leder ExistingLeader = Context.Leders.FirstOrDefault(L => L.Leder_Id == Updatedleder.Leder_Id);
+
+
+
+            if (ExistingLeader != null)
+            {
+
+                ExistingLeader.Navn = Updatedleder.Navn;
+                ExistingLeader.BrugerId = Updatedleder.BrugerId;
+
+
+            }
+
+
+            Context.SaveChanges();
         }
     }
 }

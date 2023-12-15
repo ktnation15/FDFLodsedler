@@ -13,7 +13,7 @@ namespace FDFLodsedler.Pages.Leaders
 
         public IEnumerable<Leder> Leders { get; set; }
 
-       
+
 
         public VisLederModel(Ileder leder)
         {

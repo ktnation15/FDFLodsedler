@@ -50,6 +50,10 @@ namespace FDFLodsedler.Migrations
                     b.Property<int>("Amount")
                         .HasColumnType("int");
 
+                    b.Property<int?>("BørneId")
+                        .HasColumnType("int")
+                        .HasColumnName("Børn_Id");
+
                     b.Property<string>("PaymentMethod")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -68,8 +72,8 @@ namespace FDFLodsedler.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Børn_Id"));
 
                     b.Property<int?>("GruppeId")
-                        .HasColumnType("int")
-                        .HasColumnName("Gruppe_Id");
+                        .IsRequired()
+                        .HasColumnType("int");
 
                     b.Property<string>("Navn")
                         .IsRequired()

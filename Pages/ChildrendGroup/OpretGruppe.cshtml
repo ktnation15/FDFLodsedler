@@ -13,21 +13,35 @@
                 <input asp-for="@Model.børneGruppe.Navn" class="form-control" />
                 <span asp-validation-for="@Model.børneGruppe.Navn" class="text-danger"></span>
             </div>
-           <div class="form-group">
+            <div class="form-group">
                 <label asp-for="@Model.børneGruppe. LederId" class="control-label">Gruppe Leder</label>
-               @* <input asp-for="@Model.børneGruppe. LederId" class="form-control" />*@
-                <select class=" form-control" asp-for="@Model.børneGruppe. LederId">                    
+                @* <input asp-for="@Model.børneGruppe. LederId" class="form-control" />*@
+                <select class=" form-control" asp-for="@Model.børneGruppe. LederId">
+
                     @foreach (var item in Model.Leder)
-                    {       
-                     <option value="@item.Leder_Id">@item.Navn</option>
+                    {
+
+                        <option value="@item.Leder_Id">@item.Navn</option>
+
+
                     }
+
                     }
-                </select>                
-               <span asp-validation-for="@Model.børneGruppe.LederId" class="text-danger"></span>
+
+
+
+
+                </select>
+
+                <span asp-validation-for="@Model.børneGruppe.LederId" class="text-danger"></span>
             </div>
+
+
+
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
         </form>
+
     </div>
 </div>

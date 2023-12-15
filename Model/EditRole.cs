@@ -16,4 +16,3 @@ namespace FDFLodsedler.Model
         public List<string> Users { get; set; }
     }
 }
-

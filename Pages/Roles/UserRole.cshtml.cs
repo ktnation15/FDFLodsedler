@@ -22,7 +22,7 @@ namespace FDFLodsedler.Pages.Roles
 
         [BindProperty]
 
-       
+
 
         public UserRole UserRole { get; set; }
 
@@ -49,7 +49,7 @@ namespace FDFLodsedler.Pages.Roles
                     UserName = user.UserName,
 
                 };
-                
+
 
                 userRole.IsSelected = await userManager.IsInRoleAsync(user, role.Name);
 

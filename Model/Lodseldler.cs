@@ -16,6 +16,6 @@ namespace FDFLodsedler.Model
         [Column("Børn_Id")]
         public int? BørneId { get; set; }
 
-       
+
     }
 }

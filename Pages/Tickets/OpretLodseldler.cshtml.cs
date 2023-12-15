@@ -20,37 +20,37 @@ namespace FDFLodsedler.Pages.Tickets
 
         public IEnumerable<Børn> Børns { get; set; }
 
-        [BindProperty]
+    [BindProperty]
 
-        public Børn Børnn { get; set; }
+    public Børn Børnn { get; set; }
 
-        [BindProperty]
+[BindProperty]
 
-        public Lodseldler Lodseldler { get; set; }
+public Lodseldler Lodseldler { get; set; }
 
-       
 
-        public void OnGet()
-        {
-            //Lodseldler= lodseldler.GetAllodseldler(sid);
-            Børns = Børn.GetBørn();
 
-            
-            
-        }
+public void OnGet()
+{
+    //Lodseldler= lodseldler.GetAllodseldler(sid);
+    Børns = Børn.GetBørn();
 
-        public IActionResult OnPost()
 
-        {
-            //if (!ModelState.IsValid)
-            //{
-            //    return Page();
 
-            //}
-            lodseldler.Addlodseldler(Lodseldler);
+}
 
-            return RedirectToPage("/Tickets/VisLodseldler");
+public IActionResult OnPost()
 
-        }
+{
+    //if (!ModelState.IsValid)
+    //{
+    //    return Page();
+
+    //}
+    lodseldler.Addlodseldler(Lodseldler);
+
+    return RedirectToPage("/Tickets/VisLodseldler");
+
+}
     }
 }

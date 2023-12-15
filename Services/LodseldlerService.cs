@@ -22,7 +22,7 @@ namespace FDFLodsedler.Services
 
         public Lodseldler GetAllodseldler(int id)
         {
-            Lodseldler lodseldler= Context.Lodsedlers.FirstOrDefault(l=>l.Lod_Id==id);
+            Lodseldler lodseldler = Context.Lodsedlers.FirstOrDefault(l => l.Lod_Id == id);
 
             return lodseldler;
         }
@@ -35,12 +35,28 @@ namespace FDFLodsedler.Services
         public void Removelodsseldler(Lodseldler lodseldler)
         {
             Context.Lodsedlers.Remove(lodseldler);
-            Context.SaveChanges(); ;
+            Context.SaveChanges();
         }
 
         public void Update(Lodseldler lodseldler)
         {
-            throw new NotImplementedException();
+            Lodseldler ExistingLodselder = Context.Lodsedlers.FirstOrDefault(L => L.Lod_Id == lodseldler.Lod_Id);
+
+
+
+            if (ExistingLodselder != null)
+            {
+
+                ExistingLodselder.BørneId = lodseldler.BørneId;
+                ExistingLodselder.AntalUdleveret = lodseldler.AntalUdleveret;
+
+
+            }
+
+
+            Context.SaveChanges();
         }
+
+
     }
 }

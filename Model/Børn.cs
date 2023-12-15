@@ -14,10 +14,10 @@ namespace FDFLodsedler.Model
         [StringLength(50)]
         public string Navn { get; set; }
 
-        //[Required]
-        //[ForeignKey("Gruppe_Id")]
+        [Required]
+        [ForeignKey("Gruppe_Id")]
         //public BørneGruppe BørneGruppe { get; set; }
-        [Column("Gruppe_Id")]
+        //[ForeignKey("Gruppe_Id")]
         public int? GruppeId { get; set; }
 
 

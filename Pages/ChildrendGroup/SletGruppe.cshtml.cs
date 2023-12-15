@@ -18,20 +18,20 @@ namespace FDFLodsedler.Pages.ChildrendGroup
         public BørneGruppe børneGruppe { get; set; }
 
 
-        
 
-        public void OnGet(int sid)
-        {
 
-            børneGruppe = BørnGruppe.GetAllBørn(sid);
-        }
+    public void OnGet(int sid)
+    {
 
-        public IActionResult OnPost()
-        {
-
-            BørnGruppe.RemoveBørneGruppe(børneGruppe);
-
-            return RedirectToPage("/ChildrendGroup/VisGruppe");
-        }
+        børneGruppe = BørnGruppe.GetAllBørn(sid);
     }
+
+    public IActionResult OnPost()
+    {
+
+        BørnGruppe.RemoveBørneGruppe(børneGruppe);
+
+        return RedirectToPage("/ChildrendGroup/VisGruppe");
+    }
+}
 }

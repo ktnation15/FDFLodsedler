@@ -2,21 +2,40 @@
 @model FDFLodsedler.Pages.ChildrendGroup.VisGruppeModel
 @{
 }
-<p>
-    <a asp-page="/ChildrendGroup/OpretGruppe">Opret Gruppe</a>
-</p>
-<h1> Liste Af Gruppe</h1>
-<div class="card-deck">
-    @foreach (var l in Model.børneGruppes)
-    {
-            <div class="card-header">
-                <h3>@l.Navn </h3>
-                <div>
-                </div>
-                <div class="card-footer text-sm-center">
-                    <a asp-page="/ChildrendGroup/SletGruppe" asp-route-sid="@l.Gruppe_Id" class="btn btn-danger m-1">Slet</a>
-                    <a asp-page="/Bestyrelse/OpdatereMedlem" asp-route-sid="@l.Gruppe_Id" class="btn btn-primary">Opdater</a>
-                </div>
-            </div>
-    }
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2> Oversigt over Børnegrupper</h2>
+        </div>
+        <div class="col-6 text-end">
+            <a asp-page="/ChildrendGroup/OpretGruppe" class="btn btn-primary">Opret Gruppe</a>            
+        </div>
+    </div>
 </div>
+<table class="table table-bordered table table-striped" style="width:100%">
+    <thead>
+        <tr>
+            <th>Børnegruppe navn </th>
+            <th>Leder ID </th>
+            <th>Slet</th>
+            <th>Opdater</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.børneGruppes != null)
+        {
+            @foreach (var item in Model.børneGruppes)
+            {
+                <tr>                    
+                    <td width="50%"> @item.Navn </td>
+                    <td width="30%"> @item.Gruppe_Id</td>
+                    <td>
+                        <a asp-page="/ChildrendGroup/SletGruppe" asp-route-sid="@item.Navn" class="btn btn-danger m-1">Slet </a>
+                    </td>
+                    <td>
+                        <a asp-page="/ChildrendGroup/OpdatereGruppe" asp-route-sid="@item.Gruppe_Id" class="btn btn-primary m-1">Opdater </a>
+                    </td>
+                </tr>
+            }
+        }
+</table>

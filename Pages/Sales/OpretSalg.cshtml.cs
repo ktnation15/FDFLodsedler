@@ -1,4 +1,4 @@
-using FDFLodsedler.Interface;
+ï»¿using FDFLodsedler.Interface;
 using FDFLodsedler.Model;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -8,49 +8,49 @@ namespace FDFLodsedler.Pages.Sales
     public class OpretSalgModel : PageModel
     {
         private ISalg salg;
-        private IBørn Børn;
+        private IBÃ¸rn BÃ¸rn;
 
-        public OpretSalgModel(ISalg salg, IBørn børn)
+        public OpretSalgModel(ISalg salg, IBÃ¸rn bÃ¸rn)
         {
             this.salg = salg;
-            Børn = børn;
+            BÃ¸rn = bÃ¸rn;
         }
 
         [BindProperty]
 
-        public IEnumerable<Børn> Børns { get; set; }
+        public IEnumerable<BÃ¸rn> BÃ¸rns { get; set; }
 
-        [BindProperty]
+    [BindProperty]
 
-        public Børn Børnn { get; set; }
+    public BÃ¸rn BÃ¸rnn { get; set; }
 
-        [BindProperty]
+[BindProperty]
 
-        public Salg Salg { get; set; }
-
-
-
-        public void OnGet()
-        {
-            //Lodseldler= lodseldler.GetAllodseldler(sid);
-            Børns = Børn.GetBørn();
+public Salg Salg { get; set; }
 
 
 
-        }
+public void OnGet()
+{
+    //Lodseldler= lodseldler.GetAllodseldler(sid);
+    BÃ¸rns = BÃ¸rn.GetBÃ¸rn();
 
-        public IActionResult OnPost()
 
-        {
-            //if (!ModelState.IsValid)
-            //{
-            //    return Page();
 
-            //}
-            salg.AddSalg(Salg);
+}
 
-            return RedirectToPage("/Sales/VisSalg");
+public IActionResult OnPost()
 
-        }
+{
+    //if (!ModelState.IsValid)
+    //{
+    //    return Page();
+
+    //}
+    salg.AddSalg(Salg);
+
+    return RedirectToPage("/Sales/VisSalg");
+
+}
     }
 }

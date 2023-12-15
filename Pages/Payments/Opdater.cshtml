@@ -1,0 +1,32 @@
+﻿@page
+@model FDFLodsedler.Pages.Payments.OpdaterModel
+@{
+}
+<form method="post">
+    <div class="form-group">
+
+        <input asp-for="Betalings.Betal_Id" class="form-control" type="hidden" />
+
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Betalings.BørneId"></label>
+        <input asp-for="Betalings.BørneId" class="form-control" />
+        <span asp-validation-for="Betalings.BørneId" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Betalings.PaymentMethod"></label>
+        <input asp-for="Betalings.PaymentMethod" class="form-control" />
+        <span asp-validation-for="Betalings.PaymentMethod" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Betalings.Amount"></label>
+        <input asp-for="Betalings.Amount" class="form-control" />
+        <span asp-validation-for="Betalings.Amount" class="text-danger"></span>
+    </div>
+
+
+
+
+    <input type="submit" value="Opdater betaling" class="btn btn-primary" />
+</form>

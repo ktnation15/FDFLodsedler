@@ -2,3 +2,30 @@
 @model FDFLodsedler.Pages.Sales.OpdatereSalgModel
 @{
 }
+<form method="post">
+    <div class="form-group">
+
+        <input asp-for="salg.Salg_Id" class="form-control" type="hidden" />
+
+    </div>
+    <div class="form-group">
+        <label asp-for="salg.BørneId"></label>
+        <input asp-for="salg.BørneId" class="form-control" />
+        <span asp-validation-for="salg.BørneId" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="salg.AntalSolgt"></label>
+        <input asp-for="salg.AntalSolgt" class="form-control" />
+        <span asp-validation-for="salg.AntalSolgt" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="salg.AntalReturneret"></label>
+        <input asp-for="salg.AntalReturneret" class="form-control" />
+        <span asp-validation-for="salg.AntalReturneret" class="text-danger"></span>
+    </div>
+
+
+
+    <input type="submit" value="Opdater Salg" class="btn btn-primary" />
+</form>

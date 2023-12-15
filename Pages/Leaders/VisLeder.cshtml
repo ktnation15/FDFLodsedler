@@ -2,21 +2,40 @@
 @model FDFLodsedler.Pages.Leaders.VisLederModel
 @{
 }
-<p>
-    <a asp-page="/Leaders/OpretLeder"> Nyt Medlem</a>
-</p>
-<h1> Liste Af Ledre</h1>
-<div class="card-deck">
-    @foreach (var l in Model.Leders)
-    {
-        <div class="card-header">
-            <h3>@l.Navn </h3>
-            <div>
-            </div>
-            <div class="card-footer text-sm-center">
-                <a asp-page="/Leaders/SletLeder" asp-route-sid="@l.Leder_Id" class="btn btn-danger m-1">Slet</a>
-                <a asp-page="/Bestyrelse/OpdatereMedlem" asp-route-sid="@l.Leder_Id" class="btn btn-primary">Opdater</a>
-            </div>
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2> Oversigt over Ledere</h2>
         </div>
-    }
+        <div class="col-6 text-end">
+            <a asp-page="/Leaders/OpretLeder" class="btn btn-primary">Opret ny leder</a>
+        </div>
+    </div>
 </div>
+<table class="table table-bordered table table-striped" style="width:100%">
+    <thead>
+        <tr>
+            <th>Lederens navn </th>
+            <th>BrugerId ID </th>
+            <th>Slet</th>
+            <th>Opdater</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Leders != null)
+        {
+            @foreach (var item in Model.Leders)
+            {
+                <tr>                    
+                    <td width="50%"> @item.Navn </td>
+                    <td width="30%"> @item.BrugerId</td>
+                    <td>
+                        <a asp-page="/Leaders/SletLeder" asp-route-sid="@item.Navn" class="btn btn-danger m-1">Slet </a>
+                    </td>
+                    <td>
+                        <a asp-page="/Leaders/OpdatereLeder" asp-route-sid="@item.BrugerId" class="btn btn-primary m-1">Opdater </a>
+                    </td>
+                </tr>
+            }
+        }
+</table>

@@ -20,30 +20,30 @@ namespace FDFLodsedler.Pages.ChildrendGroup
 
         public BørneGruppe børneGruppe { get; set; }
 
-        public OpretGruppeModel(IBørneGruppe børneGruppe, Ileder ileder)
+    public OpretGruppeModel(IBørneGruppe børneGruppe, Ileder ileder)
+    {
+        BørneGruppe = børneGruppe;
+        Ileder = ileder;
+    }
+
+    public void OnGet()
+    {
+        if (Leder == null)
+            Leder = Ileder.GetLeder();
+    }
+
+    public IActionResult OnPost()
+    {
+
+        if (!ModelState.IsValid)
         {
-            BørneGruppe = børneGruppe;
-            Ileder = ileder;
+            return Page();
         }
+        BørneGruppe.AddBørneGrupppe(børneGruppe);
 
-        public void OnGet()
-        {
-            if (Leder == null)
-                Leder = Ileder.GetLeder();
-        }
-
-        public IActionResult OnPost()
-        {
-
-            if(!ModelState.IsValid)
-            {
-                return Page();
-            }
-            BørneGruppe.AddBørneGrupppe(børneGruppe);
-
-            return RedirectToPage("/ChildrendGroup/VisGruppe");
-        
-        }
+        return RedirectToPage("/ChildrendGroup/VisGruppe");
 
     }
+
+}
 }

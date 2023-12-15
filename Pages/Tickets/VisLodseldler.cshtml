@@ -2,17 +2,24 @@
 @model FDFLodsedler.Pages.Tickets.VisLodseldlerModel
 @{
 }
-<p>
-    <a asp-page="/Leaders/OpretLeder"> Nyt Medlem</a>
-</p>
-<h1> Liste Af Lodselder</h1>
-<table class="table">
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2> Oversigt over lodsedler</h2>
+        </div>
+        <div class="col-6 text-end">
+            <a asp-page="/Tickets/OpretLodseldler" class="btn btn-primary">Ny Lodseddel</a>
+        </div>
+    </div>
+</div>
+<table class="table table-bordered table table-striped" style="width:100%">
     <thead>
         <tr>
-            @*  <th> BarnId </th>*@
-            <th>Lod_Id </th>
-            <th>Børn_Id </th>
-            <th>AntalUdleveret </th>        
+            <th>Lod Id </th>
+            <th>Børn Id </th>
+            <th>Antal Udleveret </th>
+            <th>Slet</th>
+            <th>Opdater</th>
         </tr>
     </thead>
     <tbody>
@@ -20,41 +27,17 @@
         {
             @foreach (var item in Model.Lodseldler)
             {
-                <tr>
-                    @* <td> @item.BarnId </td>*@
-                    <td> @item.Lod_Id </td>
-                     <td> @item.BørneId</td>
-                    <td> @item.AntalUdleveret</td>   
+                <tr>                    
+                    <td width="10%"> @item.Lod_Id </td>
+                    <td width="45%"> @item.BørneId</td>
+                    <td width="45%"> @item.AntalUdleveret</td>
                     <td>
-                        <a asp-page="/Tickets/VisLodseldler" asp-route-sid="@item.BørneId" class="btn btn-danger m-1">Slet </a>                      
-                    </td>                   
+                        <a asp-page="/Tickets/SletLodselder" asp-route-sid="@item.Lod_Id" class="btn btn-danger m-1">Slet </a>
+                    </td>
                     <td>
-                        <a asp-page="/Tickets/VisLodseldler" asp-route-sid="@item.BørneId" class="btn btn-primary">Opdater </a>
+                        <a asp-page="/Tickets/OpdatereLodseldler" asp-route-sid="@item.Lod_Id" class="btn btn-primary m-1">Opdater </a>
                     </td>
                 </tr>
             }
         }
 </table>
-@*<div class="card-deck">
-    @foreach (var l in Model.Lodseldler)
-    {
-        <div class="card-header">
-            <h3>@l.Lod_Id </h3>
-            <h3>@l.AntalUdleveret </h3>
-            <div>
-            </div>
-            <div class="card-footer text-sm-center">
-                <a asp-page="/Tickets/VisLodseldler" asp-route-sid="@l.BørneId" class="btn btn-danger m-1">Delete </a>
-
-                <a asp-page="/Tickets/VisLodseldler" asp-route-sid="@l.BørneId" class="btn btn-primary">Update </a>
-
-            </div>
-
-        </div>
-
-
-
-    }
-
-</div>
-*@

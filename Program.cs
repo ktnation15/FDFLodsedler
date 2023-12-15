@@ -27,12 +27,13 @@ namespace FDFLodsedler
             .AddDefaultTokenProviders();
             builder.Services.AddAuthorization();
 
-            builder.Services.AddTransient<IBørn, BørnService>();
-            builder.Services.AddTransient<IBørneGruppe, BørneGruppeService>();
+            builder.Services.AddTransient < IBørn, BørnService > ();
+            builder.Services.AddTransient < IBørneGruppe, BørneGruppeService > ();
             builder.Services.AddTransient<Ileder, LederService>();
             builder.Services.AddTransient<ILodseldler, LodseldlerService>();
             builder.Services.AddTransient<ISalg, SalgService>();
             builder.Services.AddTransient<IBestyrelse, BestyrelseService>();
+            builder.Services.AddTransient<IBetaling, BetalingService>();
 
             var app = builder.Build();
 

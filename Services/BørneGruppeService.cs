@@ -18,7 +18,7 @@ namespace FDFLodsedler.Services
         public void AddBørneGrupppe(BørneGruppe børn)
         {
             context.BørnGruppes.Add(børn);
-            context.SaveChanges();  
+            context.SaveChanges();
         }
 
         public BørneGruppe GetAllBørn(int id)
@@ -28,19 +28,33 @@ namespace FDFLodsedler.Services
         }
         public IEnumerable<BørneGruppe> GetBørn()
         {
-                return context.BørnGruppes;
-            
+            return context.BørnGruppes;
+
         }
 
         public void RemoveBørneGruppe(BørneGruppe børn)
         {
             context.BørnGruppes.Remove(børn);
-            context.SaveChanges();  
+            context.SaveChanges();
         }
 
-        public void Update(BørneGruppe børn)
+        public void Update(BørneGruppe UpdatedGruppebørn)
         {
-            throw new NotImplementedException();
+            BørneGruppe ExistingBørneGruppe = context.BørnGruppes.FirstOrDefault(G => G.Gruppe_Id == UpdatedGruppebørn.Gruppe_Id);
+
+
+
+            if (ExistingBørneGruppe != null)
+            {
+
+                ExistingBørneGruppe.Navn = UpdatedGruppebørn.Navn;
+                ExistingBørneGruppe.LederId = UpdatedGruppebørn.LederId;
+
+
+            }
+
+
+            context.SaveChanges();
         }
     }
 }

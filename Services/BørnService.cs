@@ -18,18 +18,18 @@ namespace FDFLodsedler.Services
         {
             Context.Børns.Add(børn);
             Context.SaveChanges();
-          
+
         }
 
         public Børn GetAllBørn(int id)
         {
-          Børn børn = Context.Børns.FirstOrDefault(b=>b.Børn_Id==id) ;
+            Børn børn = Context.Børns.FirstOrDefault(b => b.Børn_Id == id);
             return børn;
         }
 
         public IEnumerable<Børn> GetBørn()
         {
-           return Context.Børns;
+            return Context.Børns;
         }
 
         public void RemoveBørn(Børn børn)
@@ -38,18 +38,18 @@ namespace FDFLodsedler.Services
             Context.SaveChanges();
         }
 
-        public void Update(Børn børn)
+        public void Update(Børn Updatebørn)
         {
-            Børn ExistingChild = Context.Børns.FirstOrDefault(e => e.Børn_Id == børn.Børn_Id);
+            Børn ExistingChild = Context.Børns.FirstOrDefault(e => e.Børn_Id == Updatebørn.Børn_Id);
 
-            Context.Attach(børn);
+
 
             if (ExistingChild != null)
             {
 
-                ExistingChild.Navn = børn.Navn;
-                ExistingChild.GruppeId = børn.GruppeId;
-               
+                ExistingChild.Navn = Updatebørn.Navn;
+                ExistingChild.GruppeId = Updatebørn.GruppeId;
+
 
             }
 
@@ -58,5 +58,6 @@ namespace FDFLodsedler.Services
 
 
         }
+
     }
 }

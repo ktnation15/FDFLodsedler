@@ -2,3 +2,25 @@
 @model FDFLodsedler.Pages.Leaders.OpdatereLederModel
 @{
 }
+<form method="post">
+    <div class="form-group">
+
+        <input asp-for="Leder.Leder_Id" class="form-control" type="hidden" />
+
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Leder.Navn"></label>
+        <input asp-for="Leder.Navn" class="form-control" />
+        <span asp-validation-for="Leder.Navn" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Leder.BrugerId"></label>
+        <input asp-for="Leder.BrugerId" class="form-control" />
+        <span asp-validation-for="Leder.BrugerId" class="text-danger"></span>
+    </div>
+
+
+
+    <input type="submit" value="Opdater Medlem" class="btn btn-primary" />
+</form>

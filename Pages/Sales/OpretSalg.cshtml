@@ -2,12 +2,14 @@
 @model FDFLodsedler.Pages.Sales.OpretSalgModel
 @{
 }
-<h1>UdleveretLodsedler</h1>
+<h1>Opret Salg</h1>
 <div class="row">
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="  ModelOnly  " class="text-danger">
             </div>
+
+
             <div>
                 <label asp-for="@Model.Salg.BørneId" class="control-label">Barn Navn</label>
                 <select class=" form-control" asp-for="@Model.Salg.BørneId">
@@ -18,24 +20,35 @@
                             <option value="@item.Børn_Id">@item.Navn</option>
                         }
                     }
+
                 </select>
+
+
                 @* <input asp-for="@Model.Lodseldler.BørneId" class="form-control" />*@
                 <span asp-validation-for="@Model.Salg.BørneId" class="text-danger"></span>
+
             </div>
+
+
             <div class="form-group">
                 <label asp-for="@Model.Salg.AntalReturneret" class="control-label"></label>
                 <input asp-for="@Model.Salg.AntalReturneret" class="form-control" />
+
                 <span asp-validation-for="@Model.Salg.AntalReturneret" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="@Model.Salg.AntalSolgt" class="control-label"></label>
                 <input asp-for="@Model.Salg.AntalSolgt" class="form-control" />
+
                 <span asp-validation-for="@Model.Salg.AntalSolgt" class="text-danger"></span>
             </div>
+
+
+
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
         </form>
+
     </div>
 </div>
-

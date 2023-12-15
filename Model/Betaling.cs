@@ -12,8 +12,7 @@ namespace FDFLodsedler.Model
         public int Amount { get; set; }
         [Required]
         public string PaymentMethod { get; set; }
-
-
-
+        [Column("Børn_Id")]
+        public int? BørneId { get; set; }
     }
 }

@@ -13,14 +13,14 @@ namespace FDFLodsedler.Pages.Child
 
         public IEnumerable<Børn> børns { get; set; }
 
-        public VisBarnModel(IBørn børn)
-        {
-            this.børn = børn;
-        }
-
-        public void OnGet()
-        {
-            børns = børn.GetBørn();
-        }
+    public VisBarnModel(IBørn børn)
+    {
+        this.børn = børn;
     }
+
+    public void OnGet()
+    {
+        børns = børn.GetBørn();
+    }
+}
 }

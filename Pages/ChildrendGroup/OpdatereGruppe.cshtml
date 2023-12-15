@@ -2,3 +2,25 @@
 @model FDFLodsedler.Pages.ChildrendGroup.OpdatereGruppeModel
 @{
 }
+<form method="post">
+    <div class="form-group">
+
+        <input asp-for="BørneGruppe.Gruppe_Id" class="form-control" type="hidden" />
+
+    </div>
+
+    <div class="form-group">
+        <label asp-for="BørneGruppe.Navn"></label>
+        <input asp-for="BørneGruppe.Navn" class="form-control" />
+        <span asp-validation-for="BørneGruppe.Navn" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="BørneGruppe.LederId"></label>
+        <input asp-for="BørneGruppe.LederId" class="form-control" />
+        <span asp-validation-for="BørneGruppe.LederId" class="text-danger"></span>
+    </div>
+
+
+
+    <input type="submit" value="Opdater Gruppe" class="btn btn-primary" />
+</form>

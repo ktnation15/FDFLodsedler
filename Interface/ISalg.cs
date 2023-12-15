@@ -13,5 +13,7 @@ namespace FDFLodsedler.Interface
         public void RemoveSalg(Salg salg);
 
         public void Update(Salg salg);
+
+        public IEnumerable<Salg> TopSalg();
     }
 }

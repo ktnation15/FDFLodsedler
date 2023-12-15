@@ -1,0 +1,43 @@
+﻿@page
+@model FDFLodsedler.Pages.Payments.VisBetalingsModel
+@{
+}
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2> Oversigt over betalinger</h2>
+        </div>
+        <div class="col-6 text-end">
+            <a asp-page="/Payments/OpretBetaling" class="btn btn-primary">Ny betaling</a>
+        </div>
+    </div>
+</div>
+<table class="table table-bordered table table-striped" style="width:100%">
+    <thead>
+        <tr>
+            <th>Børn id</th>
+            <th>Beløb</th>
+            <th>Betalings metode</th>
+            <th>Slet</th>
+            <th>Opdater</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.betalings != null)
+        {
+            @foreach (var item in Model.betalings)
+            {
+                <tr>
+                    <td width="10%"> @item.BørneId </td>
+                    <td width="35%"> @item.Amount</td>
+                    <td width="35%"> @item.PaymentMethod</td>
+                    <td>
+                        <a asp-page="/Tickets/SletLodselder" asp-route-sid="@item.Betal_Id" class="btn btn-danger m-1">Slet </a>
+                    </td>
+                    <td>
+                        <a asp-page="/Tickets/OpdatereLodseldler" asp-route-sid="@item.Betal_Id" class="btn btn-primary m-1">Opdater </a>
+                    </td>
+                </tr>
+            }
+        }
+</table>

@@ -2,3 +2,25 @@
 @model FDFLodsedler.Pages.Tickets.OpdatereLodseldlerModel
 @{
 }
+<form method="post">
+    <div class="form-group">
+
+        <input asp-for="lodseldler.Lod_Id" class="form-control" type="hidden" />
+
+    </div>
+
+    <div class="form-group">
+        <label asp-for="lodseldler.AntalUdleveret"></label>
+        <input asp-for="lodseldler.AntalUdleveret" class="form-control" />
+        <span asp-validation-for="lodseldler.AntalUdleveret" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="lodseldler.BørneId"></label>
+        <input asp-for="lodseldler.BørneId" class="form-control" />
+        <span asp-validation-for="lodseldler.BørneId" class="text-danger"></span>
+    </div>
+
+
+
+    <input type="submit" value="Opdater lodseldler" class="btn btn-primary" />
+</form>

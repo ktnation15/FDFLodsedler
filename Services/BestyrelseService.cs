@@ -1,10 +1,11 @@
 ﻿using FDFLodsedler.Data;
 using FDFLodsedler.Interface;
+using FDFLodsedler.Migrations;
 using FDFLodsedler.Model;
 
 namespace FDFLodsedler.Services
 {
-    
+
     public class BestyrelseService : IBestyrelse
     {
         private ApplicationDBContext Context;
@@ -27,17 +28,26 @@ namespace FDFLodsedler.Services
 
         public Bestyrelse GetMedlemmer(int id)
         {
-            throw new NotImplementedException();
+            Bestyrelse bestyrelse = Context.Bestyrelses.FirstOrDefault(b => b.Bestyrelse_Id == id);
+            return bestyrelse;
         }
 
         public void RemoveMedlemmer(Bestyrelse bestyrelse)
         {
-            throw new NotImplementedException();
+            Context.Bestyrelses.Remove(bestyrelse);
+            Context.SaveChanges();
         }
 
         public void UpdateMedlemmer(Bestyrelse bestyrelse)
         {
-            throw new NotImplementedException();
+            Bestyrelse Existingbestyrelse = Context.Bestyrelses.FirstOrDefault(b => b.Bestyrelse_Id == bestyrelse.Bestyrelse_Id);
+
+            if (Existingbestyrelse != null)
+            {
+                Existingbestyrelse.Navn = bestyrelse.Navn;
+
+            }
+            Context.SaveChanges();
         }
     }
 }

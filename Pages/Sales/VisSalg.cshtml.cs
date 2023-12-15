@@ -7,7 +7,7 @@ using System.Data;
 
 namespace FDFLodsedler.Pages.Sales
 {
-    //[Authorize(Roles = "Amin")]
+
     public class VisSalgModel : PageModel
     {
         private ISalg Salg;
