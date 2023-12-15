@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FDFLodsedler.Model
 {
-    public class LoginDBContext:IdentityDbContext<IdentityUser>
+    public class LoginDBContext : IdentityDbContext<IdentityUser>
     {
         public LoginDBContext()
         {
@@ -15,7 +15,7 @@ namespace FDFLodsedler.Model
         {
 
         }
-        
+
     }
 
 }

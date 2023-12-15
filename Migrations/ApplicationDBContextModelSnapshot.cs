@@ -17,10 +17,10 @@ namespace FDFLodsedler.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.0")
+                .HasAnnotation("ProductVersion", "7.0.14")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
-            SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
+            SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
             modelBuilder.Entity("FDFLodsedler.Model.Bestyrelse", b =>
                 {
@@ -28,7 +28,7 @@ namespace FDFLodsedler.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Bestyrelse_Id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Bestyrelse_Id"));
 
                     b.Property<string>("Navn")
                         .IsRequired()
@@ -45,7 +45,7 @@ namespace FDFLodsedler.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Betal_Id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Betal_Id"));
 
                     b.Property<int>("Amount")
                         .HasColumnType("int");
@@ -65,7 +65,7 @@ namespace FDFLodsedler.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Børn_Id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Børn_Id"));
 
                     b.Property<int?>("GruppeId")
                         .HasColumnType("int")
@@ -87,7 +87,7 @@ namespace FDFLodsedler.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Gruppe_Id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Gruppe_Id"));
 
                     b.Property<int?>("LederId")
                         .HasColumnType("int")
@@ -109,7 +109,7 @@ namespace FDFLodsedler.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Leder_Id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Leder_Id"));
 
                     b.Property<string>("BrugerId")
                         .IsRequired()
@@ -132,7 +132,7 @@ namespace FDFLodsedler.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Lod_Id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Lod_Id"));
 
                     b.Property<int>("AntalUdleveret")
                         .HasColumnType("int");
@@ -152,7 +152,7 @@ namespace FDFLodsedler.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Salg_Id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Salg_Id"));
 
                     b.Property<int>("AntalReturneret")
                         .HasColumnType("int");

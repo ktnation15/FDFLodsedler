@@ -13455,3 +13455,18 @@ body {
     max-width: 100%;
     height: auto;
 }
+.btn-link {
+    display: inline-block;
+    margin-right: 10px; /* Adjusts spacing between the link and the button */
+    padding: .5rem 1rem; /* Optional: to match the button's size */
+    text-decoration: none; /* Removes underline from the link */
+    background-color: #f8f9fa; /* Optional: background color */
+    color: #007bff; /* Optional: text color */
+    border: 1px solid transparent; /* Optional: to match the button's style */
+    border-radius: .25rem; /* Optional: to match the button's style */
+}
+
+    .btn-link:hover {
+        text-decoration: none; /* Keeps the underline off on hover */
+        background-color: #e2e6ea; /* Optional: background color on hover */
+    }
