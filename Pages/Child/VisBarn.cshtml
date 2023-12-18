@@ -17,6 +17,8 @@
         <tr>
             <th>Barnets navn </th>
             <th>Gruppe ID </th>
+            <th>Udlever</th>
+            <th>Salg</th>
             <th>Slet</th>
             <th>Opdater</th>
         </tr>
@@ -28,7 +30,13 @@
             {
                 <tr>
                     <td width="50%"> @item.Navn </td>
-                    <td width="30%"> @item.GruppeId</td>
+                    <td width="15%"> @item.GruppeId</td>
+                    <td>
+                        <a asp-page="/Tickets/OpretLodseldler" class="btn btn-danger m-1">Udlever lodseddel</a>
+                    </td>
+                    <td>
+                        <a asp-page="/Sales/OpretSalg" class="btn btn-primary m-1">Salg</a>
+                    </td>
                     <td>
                         <a asp-page="/Child/SletBarn" asp-route-sid="@item.Navn" class="btn btn-danger m-1">Slet </a>
                     </td>
